@@ -1,0 +1,237 @@
+/*========================================= DISCOVER PAGE========================================= */
+
+/* HEADING */
+
+.discoverTitle {
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: rgb(164, 146, 228);
+}
+
+.titlespan {
+  font-weight: 900;
+}
+
+.discover-background {
+  background-image: url("/src/Components/discover/discover-images/discover-data/discover-data-bg.jpg") !important;
+}
+
+body {
+  background-size: auto;
+  text-align: center;
+  font-family: sans-serif;
+  color: #fefefe;
+}
+
+.discover {
+  height: 480px;
+}
+
+.discover-container {
+  width: 200px;
+  height: 100px;
+  margin: 50px auto 0 auto;
+  perspective: 900px;
+}
+
+.discover-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate360 40s infinite forwards linear;
+}
+
+.discover-carousel:hover {
+  animation-play-state: paused;
+}
+
+.discover-carousel__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.discover-span {
+  margin-top: 150px;
+  margin-left: 70px;
+  font-size: 15px;
+}
+
+.discover-carousel__face:nth-child(1) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/vampire.jpg");
+  transform: rotateY(0deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(2) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/werewolf.jpg");
+  transform: rotateY(30deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(3) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/witches.jpg");
+  transform: rotateY(60deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(4) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/banshee.jpg");
+  transform: rotateY(90deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(5) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/oni.jpg");
+  transform: rotateY(120deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(6) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/phoenix.jpg");
+  transform: rotateY(150deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(7) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/dragon.jpg");
+  transform: rotateY(180deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(8) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/zombie.jpg");
+  transform: rotateY(210deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(9) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/mermaid.jpg");
+  transform: rotateY(2400deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(10) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/goblin.jpg");
+  transform: rotateY(270deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(11) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/windigo.jpg");
+  transform: rotateY(300deg) translateZ(430px);
+}
+.discover-carousel__face:nth-child(12) {
+  background-image: url("/src/Components/discover/discover-images/discover-crousel/cyclops.jpg");
+  transform: rotateY(330deg) translateZ(430px);
+}
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+.discover-button {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.discover-button:hover {
+  background-image: linear-gradient(rgb(51, 16, 75), rgb(31, 3, 5));
+  color: rgb(245, 239, 239);
+}
+
+/* ========================================DISCOVER-DATA====================================== */
+
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i");
+
+:root {
+  --title-font: "Josefin Slab", serif;
+  --text-font: "PT Serif", Serif;
+  --width: 20em;
+}
+
+.discover-data-div {
+  justify-content: space-evenly;
+  display: grid;
+}
+
+.discover-data-title,
+.discover-data-subtitle {
+  color: var(--title);
+  text-transform: capitalize;
+  font-family: var(--title-font);
+}
+.discover-data-title {
+  font-size: 30px;
+  font-weight: 1000;
+  color: red;
+}
+.discover-data-article {
+  border-radius: 50px;
+  width: 40rem;
+  height: 46rem;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-image: url("/src/Components/discover/discover-images/discover-data/discover-data-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+.discover-data-subtitle {
+  font-size: 22px;
+  text-align: left;
+  font-weight: 800;
+  color: yellow;
+}
+
+.discover-data-article p {
+  font-family: var(--text-font);
+  color: white;
+  font-size: 14px;
+  margin-top: 6px;
+  text-align: left;
+}
+
+.discover-data-a {
+  text-decoration: none;
+  background-color: white;
+  padding: 8px;
+  border-radius: 20px;
+  color: rgb(142, 44, 212);
+  font-family: var(--title-font);
+  font-weight: 1000;
+  font-size: 18px;
+}
+
+@media (max-width: 700px) {
+  .discover-data-article {
+    width: 500px;
+    height: 950px;
+  }
+}
+
+@media (max-width: 600px) {
+  .discover-data-article {
+    width: 400px;
+    height: 1100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .discover-container {
+    perspective: 1500px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .discover-container {
+    perspective: 2000px;
+  }
+}
+
+@media (max-width: 950px) {
+  .discover-container {
+    perspective: 4000px;
+  }
+}
+
+@media (max-width: 800px) {
+  .discover-container {
+    perspective: 100000px;
+  }
+}
