@@ -1,0 +1,364 @@
+/* =============================HOME PAGE IMAGES SLIDER============================ */
+
+.inspired-by {
+  height: 500px;
+  width: 1550px;
+}
+
+.slider {
+  overflow: hidden;
+  margin-bottom: -8px;
+}
+
+/* ===============================HOME-DETAILS==================================  */
+
+.card-front__heading {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Main heading for inside page */
+.inside-page__heading {
+  padding-bottom: 1rem;
+}
+
+.inside-page__heading,
+.card-front__text-view {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+
+.inside-page__heading--discover,
+.inside-page__heading--funzone,
+.inside-page__heading--shopping {
+  margin-left: 2rem;
+  color: #703251;
+}
+
+.card-front__text-view--discover,
+.card-front__text-view--funzone,
+.card-front__text-view--shopping {
+  color: #703251;
+}
+
+/* Back cover */
+
+/* For inside page's body text */
+.inside-page__text {
+  margin-left: 3rem;
+  color: rgb(181, 26, 196);
+}
+
+/* Buttons*/
+
+.inside-page__btn {
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 1.5rem;
+  overflow: hidden;
+  padding: 0.5rem 0rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 60%;
+  z-index: 10;
+  border-color: #000000;
+  color: #72175b;
+}
+
+.inside-page__btn::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: -1;
+  background-color: #290f1c;
+}
+
+.inside-page__btn:hover {
+  color: #fafbfa;
+}
+
+.inside-page__btn:hover::before {
+  transform: scaleY(1);
+}
+
+/* Layout Structure*/
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0px;
+}
+
+/* Container to hold all cards in one place */
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 20px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+/* Card*/
+
+/* A container to hold the flip card and the inside page */
+.card {
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 20rem;
+  position: relative;
+  transition: all 1s ease;
+  width: 15rem;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-card {
+  height: 20rem;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 15rem;
+  z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+.flip-card > * {
+  visibility: visible;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+.flip-card__container {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.card-front,
+.card-back {
+  border-radius: 100px;
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 80%;
+}
+
+/* Styling for the front side of the flip card */
+
+/* container for the front side */
+.card-front {
+  background-color: #fafbfa;
+  height: 20rem;
+  width: 15rem;
+}
+
+/* Front side's top section */
+.card-front__tp {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  height: 16rem;
+}
+
+/* Front card's bottom section */
+.card-front__bt {
+  display: flex;
+  justify-content: center;
+}
+/* Styling for the back side of the flip card */
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Inside page */
+
+.inside-page {
+  background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 15rem;
+  z-index: 1;
+  border-radius: 100px;
+}
+
+.inside-page__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+/* Functionality*/
+
+/* This is to keep the card centered (within its container) when opened */
+.card:hover {
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+  width: 30rem;
+}
+
+/* When the card is hovered, the flip card container will rotate */
+.card:hover .flip-card__container {
+  transform: rotateY(-180deg);
+}
+
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+.card:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.imgFront {
+  height: 100%;
+  width: 100%;
+}
+
+.imgInside {
+  height: 20rem;
+  width: 16rem;
+}
+
+@media (max-width: 1400px) {
+  .inspired-by {
+    height: 400px;
+    width: 1400px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .inspired-by {
+    height: 400px;
+    width: 1300px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .inspired-by {
+    height: 400px;
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .card-area {
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+
+  .card {
+    margin-left: 60px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .inspired-by {
+    height: 400px;
+    width: 1100px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .inspired-by {
+    height: 400px;
+    width: 1000px;
+  }
+}
+
+@media (max-width: 900px) {
+  .inspired-by {
+    height: 400px;
+    width: 900px;
+  }
+}
+
+@media (max-width: 800px) {
+  .inspired-by {
+    height: 400px;
+    width: 800px;
+  }
+}
+
+@media (max-width: 700px) {
+  .inspired-by {
+    height: 400px;
+    width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .inspired-by {
+    height: 400px;
+    width: 600px;
+  }
+}
+
+@media (max-width: 500px) {
+  .inspired-by {
+    height: 400px;
+    width: 500px;
+  }
+}
+
+@media (max-width: 400px) {
+  .inspired-by {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media (max-width: 750px) {
+  .card {
+    margin-left: -100px;
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 650px) {
+  .card {
+    margin-left: -150px;
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 580px) {
+  .card {
+    margin-left: -180px;
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 550px) {
+  .card {
+    margin-left: -250px;
+    margin-right: 100px;
+  }
+}
